@@ -31,37 +31,37 @@ class MP
 		self::$target_page 	= basename($_SERVER['SCRIPT_FILENAME']);
 
 		// Optional Settings
-		self::$adjacents 	= (
-								isset($option['adjacents']) 
-								&& is_numeric($option['adjacents'])
-								&& $option['adjacents'] > 0
-							) ? $option['adjacents'] : 3;
-		self::$limit 		= (
-								isset($option['limit']) 
-								&& is_numeric($option['limit'])
-								&& $option['limit'] > 0
-							) ? $option['limit'] : 6;
-		self::$action 		= (
-								isset($option['action']) 
-								&& $option['action'] != ''
-								&& $option['action'] != null
-							) ? str_replace(" ", "-", trim($option['action'])) : 'page';
-		self::$condition 		= (
-								isset($option['condition']) 
-								&& $option['condition'] != ''
-								&& $option['condition'] != null
-							) ? $option['condition'] : '1';
-		self::$theme 		= (
-								isset($option['theme']) 
-								&& $option['theme'] != ''
-								&& $option['theme'] != null
-								&& in_array(strtolower($option['theme']), $this->themes)
-							) ? strtolower($option['theme']) : 'light';
-		self::$query 		= (
-								isset($option['query']) 
-								&& $option['query'] != ''
-								&& $option['query'] != null
-							) ? $option['query'] : null;
+		self::$adjacents = (
+					isset($option['adjacents']) 
+					&& is_numeric($option['adjacents'])
+					&& $option['adjacents'] > 0
+				) ? $option['adjacents'] : 3;
+		self::$limit 	= (
+					isset($option['limit']) 
+					&& is_numeric($option['limit'])
+					&& $option['limit'] > 0
+				) ? $option['limit'] : 6;
+		self::$action 	= (
+					isset($option['action']) 
+					&& $option['action'] != ''
+					&& $option['action'] != null
+				) ? str_replace(" ", "-", trim($option['action'])) : 'page';
+		self::$condition = (
+					isset($option['condition']) 
+					&& $option['condition'] != ''
+					&& $option['condition'] != null
+				) ? $option['condition'] : '1';
+		self::$theme = (
+					isset($option['theme']) 
+					&& $option['theme'] != ''
+					&& $option['theme'] != null
+					&& in_array(strtolower($option['theme']), $this->themes)
+				) ? strtolower($option['theme']) : 'light';
+		self::$query = (
+				isset($option['query']) 
+				&& $option['query'] != ''
+				&& $option['query'] != null
+			) ? $option['query'] : null;
 
 		// Check Connection validity and Count The whole Items in the $table_name
 		$this->checkConnection();
